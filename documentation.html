@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1rem 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      background: #34495e;
+      padding: 0.5rem 2rem;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    aside {
+      width: 250px;
+      margin-right: 2rem;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    aside li {
+      margin-bottom: 0.5rem;
+    }
+
+    aside a {
+      text-decoration: none;
+      color: #2c3e50;
+    }
+
+    aside a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Documentation</h1>
+  </header>
+
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#setup">Setup</a>
+    <a href="#usage">Usage</a>
+    <a href="#api">API</a>
+  </nav>
+
+  <div class="container">
+    <aside>
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#setup">Installation & Setup</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#api">API Reference</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="intro">
+        <h2>Introduction</h2>
+        <p>
+          Welcome to the documentation page. This section provides an overview of the project and its purpose.
+        </p>
+      </section>
+
+      <section id="setup">
+        <h2>Installation & Setup</h2>
+        <p>Follow these steps to get started:</p>
+        <pre><code>git clone https://example.com/repo.git
+cd repo
+npm install</code></pre>
+      </section>
+
+      <section id="usage">
+        <h2>Usage</h2>
+        <p>Basic usage example:</p>
+        <pre><code>npm start</code></pre>
+      </section>
+
+      <section id="api">
+        <h2>API Reference</h2>
+        <p>Example function:</p>
+        <pre><code>function greet(name) {
+  return `Hello, ${name}`;
+}</code></pre>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Documentation Page</p>
+  </footer>
+
+</body>
+</html>
