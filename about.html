@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Avenir Next">
+        <style>
+            body {
+              font-family: "Avenir Next", sans-serif;
+            }
+            h1 {
+                line-height: 1.0;
+                /* color: #4F2683; */              
+                color: #cc0000;                
+            }
+            h2 {
+                line-height: 1.0;
+                color: #777;
+            }
+            .purple {
+                 /* color: #4F2683; */              
+                 color: #cc0000;                
+            }
+            .bg_grey {
+                background-color: #eee;
+                padding:5 15 5 15
+            }
+            p.small {
+                font-size: 80%;
+            }
+            p.large {
+                font-size: 125%;
+            }
+            th, td {
+                border-bottom: 1px solid;
+            }
+            </style>
+    </head>
+    <body>
+        <div style = "padding:10px 20% 10px 20%;">
+<div>
+<h1>Welcome to the Canadian Neighbourhood Change Explorer!</h1>
+<p class = "large"><strong>The portal leverages newly created and liberated Census datasets to provide new insights into how urban neighbourhoods across Canada have changed over the past 70 years.</strong></h3>
+<p class = "large">The Explorer is a project of the <a href="https://www.uwo.ca/" target="_blank">University of Western Ontario</a>&rsquo;s <a href="https://nest.uwo.ca" target="_blank">Network on Economic and Social Trends</a> (NEST). <a href="https://www.zacktaylor.com" target="_blank">Prof. Zack Taylor</a> and <a href="https://www.mitacs.ca" target="_blank">Mitacs</a> <a href="https://hewittcartographer.ca">Postdoctoral Fellow Christopher Hewitt</a> worked with <a href="https://hed.esri.ca" target="_blank">Esri Canada</a> to construct the portal using data from the <a href="https://observatory.uwo.ca/unicen/index.html" target="_blank">Unified Infrastructure for Canadian Census Research</a> (UNI-CEN) project. The Western team is grateful for the leadership of Brent Hall and Jon Salter and the extraordinary talent of Michael Luubert and Jonathan Van Dusen of the Esri Canada Higher Education team, without whom the project would not have come to fruition.</p>
+<p style="text-align:center"><img title="NEST logo" src="./images/NEST_Logo_H_CMYK.svg" width = 80%  alt="NEST logo" /></p>
+<p style="text-align:center"><img title="Esri logo" src="./images/ER_EN.png" width = 48% alt="NEST logo" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img title="Mitacs logo" src="./images/Mitacs_logo_blue.png" width = 28%  alt="Mitacs logo" /></p>
+</div>
+<!-- ABOUT THE DATA -->
+<h1 style="padding-top:40px;">About the data</h1>
+<p><strong>The UNI-CEN database contains a wide range of data from the 15 Censuses taken every five years between 1951 and 2021 period.</strong> This portal presents a curated selection of these data at the census tract level. Census tracts are neighbourhood-sized areas containing an average of approximately 4,000 people. Statistics Canada started releasing Census data at the census tract level in 1951 and has continued to do so every five years, adding more cities and tracts as Canadian cities have become larger and the Canadian population has become more urban.</p>
+<p><strong>Consistent categories.</strong> To maximize consistency of Census concepts across time, selected variables were aggregated to more or less consistently defined categories. The aggregation decisions are described below. The selected themes are available in multiple Census years and are consistently defined. The earlier the Census, the less data were collected and the more difficult it is to ensure a high degree of consistency in definitions across time.</p>
+<p id = "fn1origin"><strong>Apportioning to 2021 census tract boundaries &ndash; and its limitations. </strong>As the boundaries of neighbourhood-sized census tracts change from year to year, the data were apportioned to 2021 tract boundaries using the <a href="https://github.com/jamaps/CLTD" target="_blank">Canadian Longitudinal Tract Database</a> created by <a href="https://jamaps.github.io/about.html" target="_blank">Jeff Allen</a> and <a href="https://www.zacktaylor.com" target="_blank">Zack Taylor</a>. The apportioning method ensures a high and increasing degree of geographic fidelity starting in 1971. Due to data limitations, the apportioning of the Census data in the 1950s, 1960s, and 1990s is less accurate. In some cases, we have suppressed data to avoid presenting misleading percentages, and you will do doubt find anomalous percentages in some tracts, including false zeros where no data exist.<sup><a href="#ftnt_ref1">1</a></sup> The Explorer is intended to reveal general patterns across space and time. Do not use the apportioned counts shown in the application for academic research.</p>
+<!-- ABOUT THE THEMES AND CATEGORIES -->
+<h1 style="padding-top:40px;">About the Census themes and categories</h1>
+<p>The following descriptions of the Census themes and their categories are based on those in Statistics Canada&rsquo;s <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/index-eng.cfm" target="_blank">Census Dictionary</a>.</p>
+<h2>Age Group</h2>
+<p>The population is divided into four age cohorts: 0&ndash;19, 20&ndash;29, 30&ndash;64, and 65 and Older. This variable is available in all Census years.</p>
+<h2>Commute to Work</h2>
+<p>Starting in 1996, the Census began asking how people in the labour force aged 15 or over travel to work. The travel modes are aggregated into five categories: Automobile (as driver or passenger), Transit, Bicycle, Walk, or Other. The Other category includes commuting by taxi and motorcycle.</p>
+<h2>Dwelling Period of Construction</h2>
+<p>For most years we have information about the age of housing. For consistency across time, we have aggregated these into three general categories: 1960 and earlier, 1961&ndash;1990, and 1991 and later. Not all categories are available depending on the year you have selected.</p>
+<h2>Dwelling Type</h2>
+<p>Information about housing types is available for much of the time period. As the definitions in the Census have changed over time, we have aggregated them into several very broad categories: Single-Detached, Apartments (low- or high-rise), and attached housing: Row Housing, Semi-Detached Housing, and Duplexes. The Other category includes Mobile Homes and other types.</p>
+<h2>Education &mdash; Highest Level Achieved</h2>
+<p>The educational attainment categories vary considerably across Census years, in large part because of generalized increases in the amount of education people across Canadian society receive, and the growing complexity of higher education offerings. For consistency across time, we have created three general categories: High School Diploma or Less, those who have obtained a non-university Certificate or Diploma, including a trades apprenticeship or college or CEGEP diploma, and those who have received a University Degree. Non-degree diplomas or certificates conferred by universities are included in the Certificate or Diploma category.</p>
+<h2>Ethnic Origin</h2>
+<p>How the ethnic origin question is asked has changed over the years. Generally, the person is asked about their ethnic or cultural origin or origins of their ancestors. The answers include a mixture of geographic, ethno-cultural, racial, and religious categories, and should be interpreted with caution. For more information, consult Statistics Canada&rsquo;s <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/008/98-500-x2021008-eng.cfm" target="_blank">Ethnic or Cultural Origin Reference Guide</a>.</p>
+<p>In earlier years, Census-takers were asked for a Single Response. If a person was of mixed origins, they were instructed to report the ethnicity of the father. Recognizing the growing complexity of society, Statistics Canada allowed people to select Multiple Responses starting in 1991. We recognize this important change by including each as a separate theme in the portal. The number of ethnic origins reported in Census products has also increased dramatically over time. We have included only a small number of common ethnic origins in the portal, selected to maximize consistency over time.</p>
+<h2>Household Income</h2>
+<p>We include the Average and Median total household income in each neighbourhood. The dollar values are not adjusted for inflation. If the median is below the average in a neighbourhood, it means most households have lower incomes, but a small number of very high-income households are pulling the average up. If the average is below the median, it means the reverse: a small number of very low-income households are pulling the distribution down. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/004/98-500-x2021004-eng.cfm" target="_blank">Income Reference Guide</a>.</p>
+<h2>Household Size</h2>
+<p>Several long-term demographic changes have changed household formation and structure. As birthrates have declined, lifespans have increased, and younger adults partner and have children later, households have become on average smaller since the 1970s. The housing market has responded by creating housing types, such as condominium apartments, designed for singles. This shift is visible in the growing proportion of 1 Person Households and corresponding declining shares for larger households. For statistical purposes, a household refers to a person or group of persons who occupy the same dwelling and do not have a usual place of residence elsewhere in Canada or abroad.</p>
+<h2>Housing Tenure</h2>
+<p>Housing tenure refers to whether one&rsquo;s place of habitation is Owned or Rented. Starting in 1986, the Census separately accounts for Band Housing &ndash; that is, housing located on Indian Reserves. Prior to 1986, Band Housing was included in the Owned or Rented categories.</p>
+<h2>Immigrant Status</h2>
+<p>Consistently defined counts of Immigrants, Non-immigrants, and Non-Permanent Residents are available starting in 1996. Immigrants are defined as people who are, or who have ever been, permanent residents. Virtually all permanent residents are people born outside Canada to non-citizens, but who have been admitted to Canada to live on a permanent basis. Non-immigrants are people born in Canada or who have Canadian citizenship due to having a Canadian parent. Non-permanent residents are people born outside Canada with a usual place of residence in Canada and who have a work or study permit or who have claimed refugee status. Family members living with work or study permit holders are also included, unless these family members are already Canadian citizens or landed immigrants or permanent residents. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/007/98-500-x2021007-eng.cfm" target="_blank">Place of Birth, Generation Status, Citizenship and Immigration Reference Guide</a>. Prior to 1996, counts of Canadian-born and foreign-born residents have been used to indicate non-immigrants and immigrants, although it should be noted that in those years the foreign-born group may also contain non-permanent residents.</p>
+<h2>Indigenous Identity</h2>
+<p>Indigenous Identity refers to whether the person self-identified as First Nations (North American Indian), M&eacute;tis, and/or Inuk (Inuit), and/or those who report being Registered or Treaty Indians, and/or members of a First Nation or Indian band. This information is consistently available starting with the 1996 Census. Separate categories indicate people who identify with a single Indigenous identity or multiple identities. The Non-Indigenous Identity population comprises people who identify with no Indigenous Identity.</p>
+<h2>Individual Income</h2>
+<p>We include the Average and Median total individual income in each neighbourhood. The dollar values are not adjusted for inflation. If the median is below the average in a neighbourhood, it means most people have lower incomes, but a small number of very high-income earners are pulling the average up. If the average is below the median, it means the reverse: a small number of very low-income earners are pulling the distribution down. Individual total income is reported for the population aged 15 years and over living in private households. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/004/98-500-x2021004-eng.cfm" target="_blank">Income Reference Guide</a>.</p>
+<h2>Labour Force Status</h2>
+<p>Labour force status refers to whether people aged 15 and over are Employed, Unemployed, or Not in the Labour Force. Unemployed people are considered to be in the labour force, but not currently employed while temporarily laid off, looking for work, or about to start work.</p>
+<h2>Language &mdash; Knowledge of Official Languages</h2>
+<p>Knowledge of official languages refers to whether the person can conduct a conversation in English Only, French Only, in both English and French, or in Neither Official Language. For a child who has not yet learned to speak, this includes languages that the child is learning to speak at home. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/003/98-500-x2021003-eng.cfm" target="_blank">Languages Reference Guide</a>.</p>
+<h2>Language &mdash; Mother Tongue</h2>
+<p>Mother tongue refers to the first language learned at home in childhood and still understood by the person at the time the data was collected. As the Census reports data for very different languages over time, we include only English and French here. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/003/98-500-x2021003-eng.cfm" target="_blank">Languages Reference Guide</a>.</p>
+<h2>Marital Status</h2>
+<p>This theme indicates legal marital status (Never Married, Married, Separated, Widowed or Divorced, and whether unmarried people live in Common Law unions. The concept has changed over time. Starting in 1971, the data include people aged 15 and over only; prior to 1971, the data are for the total population. For this reason we provide the pre-1971 data and data from 1971 and later as separate themes. The common law category first appears in 2011.</p>
+<h2>Mobility</h2>
+<p>Mobility indicates whether a person aged 5 years or more had changed residence within the past five years.</p>
+<h2>Occupation</h2>
+<p>Statistics Canada classifies the kind of work performed by people in the labour force aged 15 and over. The question was asked only every 10 years until 1981. The classification scheme has changed almost every Census year, sometimes considerably. To achieve a rough continuity over the full time period, we have aggregated the categories into more general groupings &ndash; see the table below. Note that this theme indicates the location of the worker&rsquo;s residence, not the location of their place of employment.</p>
+<table style = "width: 100%;">
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>Occupation Category</strong></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><strong>Years Available</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Arts, Recreation, Sports</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Business, Finance, Administration</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Education, Law, Government, Community Services</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Health</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Management</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981, 1996&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Manufacturing</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Natural and Applied Sciences</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Primary Industries (Farming, Fishing, Logging, Mining)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Professional</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Sales and Service</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981&ndash;2021</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Trades, Transport, Equipment Operators</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>1951, 1961, 1971, 1981&ndash;2021</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Occupied Private Dwellings</h2>
+<p>The total number of occupied private dwellings, defined as a separate set of living quarters with a private entrance either from outside the building or from a common hall, lobby, vestibule or stairway inside the building. For more information consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/001/98-500-x2021001-eng.cfm" target="_blank">Type of Dwelling Reference Guide</a>.</p>
+<h2>Population</h2>
+<p>The total population.</p>
+<h2>Population Density</h2>
+<p>The total population divide by the area of the census tract.</p>
+<h2>Religion</h2>
+<p>Religion refers to the person's self-identification as having a connection or affiliation with any religious denomination, group, body, or other religiously defined community or system of belief. Religion is not limited to formal membership in a religious organization or group. Infants or children are included under the specific religious group or denomination in which they are being raised, if any. This question is asked only every ten years. As the disseminated categories vary considerably over time, we have aggregated Christian denominations other than Catholic, Orthodox, Anglican and United Church to an Other Christian category. Starting in 1961, people who do not identify with a religion are classified as None. Hindu, Muslim, and Sikh appear starting in 1991. Jewish is present across the full time period. Buddhist first appeared in 1961. Aboriginal spirituality first appeared in 2001.</p>
+<h2>Visible Minority</h2>
+<p>Starting in 1996, the Census began asking people the &ldquo;visible minority&rdquo; category, as defined by the Employment Equity Act, with which they identify. The Act defines visible minorities as &ldquo;persons, other than Aboriginal peoples, who are non‑Caucasian in race or non‑white in colour.&rdquo; The theme includes the following categories: Arab, Black, Chinese, Filipino, Japanese, Korean, Latin American, South Asian, Southeast Asian. A West Asian category was added in 2001. Indigenous peoples are classified as Not a Visible Minority. People who selected more than one visible minority category are counted under Multiple Visible Minorities. For more information, consult the <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/98-500/006/98-500-x2021006-eng.cfm" target="_blank">Visible Minority and Population Group Reference Guide</a>.</p>
+<h2>Credits</h2>
+<p>Restart button by Arthur Shlain from <a href=https://thenounproject.com/browse/icons/term/restart/ target="_blank" title="restart Icons">Noun Project</a> (CC BY 3.0).</p>
+<div>
+<hr />
+<p>Last update: February 12, 2024</p>
+</div>
+<hr />
+<div>
+<p class = "small" id = "ftnt_ref1"><sup><a href="#fn1origin">1</a></sup> In less than 1% of tracts across all years, most of which are in the 1951&ndash;1966 period, summing the categories adds up to more than the theme total. In these cases we have set the percentage to 100%.</p>
+</div>
+</div>
+</body>
+</html>
